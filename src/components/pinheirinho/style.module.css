@@ -1,0 +1,125 @@
+
+.Body {
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.Pinheirinho {
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 35%;
+    background-image: url("./icon/pngegg.png");
+}
+
+
+.bodyPinheirinho {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.bodyPinheirinho .stages {
+    display: grid;
+    grid-template-rows: 5px 5px;
+}
+
+
+.bodyPinheirinho  .stages  .preStage{
+    display: flex;
+    gap: 34px;
+
+    padding-top: 50px;
+    padding-left: 106px;
+}
+
+.bodyPinheirinho  .stages  .preStage .left {
+    display: grid;
+    grid-template-columns: 10px 10px;
+    gap: 5px;
+}
+
+.bodyPinheirinho  .stages  .preStage .right {
+    display: grid;
+    grid-template-columns: 10px 10px;
+    gap: 5px;
+}
+
+
+.bodyPinheirinho  .stages  .stage{
+    display: flex;
+    gap: 34px;
+
+    padding-top: 78px;
+    padding-left: 106px;
+}
+
+.bodyPinheirinho  .stages  .stage .left {
+    display: grid;
+    grid-template-columns: 10px 10px;
+    gap: 5px;
+}
+
+.bodyPinheirinho  .stages  .stage .right {
+    display: grid;
+    grid-template-columns: 10px 10px;
+    gap: 5px;
+}
+
+.bodyPinheirinho  .proStages {
+    display: flex;
+    flex-direction: row;
+    gap: 63px;
+
+    padding-top: 95px;
+    padding-left: 108px;
+}
+
+.bodyPinheirinho  .proStages .left {
+    display: grid;
+    grid-template-rows: 5px 5px 5px 5px 5px;
+    gap: 32px;
+}
+
+.bodyPinheirinho  .proStages .right {
+    display: grid;
+    grid-template-rows: 5px 5px 5px 5px 5px;
+    gap: 32px;
+}
+
+.bodyPinheirinho .stages .light_orage {
+    width: 8px;
+    height: 5px;
+    border-radius: 1000px;
+    box-shadow: orange 0px 0px 15px 5px;
+}
+
+.bodyPinheirinho  .proStages .light_orage {
+    width: 10px;
+    height: 10px;
+    border-radius: 1000px;
+    box-shadow: orange 0px 0px 11px 10px;
+}
+
+
+.bodyPinheirinho .stages .light_green {
+    width: 8px;
+    height: 5px;
+    border-radius: 1000px;
+    box-shadow: #37ff00 0px 0px 11px 10px;
+}
+
+.bodyPinheirinho  .proStages .light_green {
+    width: 10px;
+    height: 10px;
+    border-radius: 1000px;
+    box-shadow: #37ff00 0px 0px 11px 10px;
+}

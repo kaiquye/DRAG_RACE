@@ -1,5 +1,5 @@
 import { Router } from "express";
-import HttpAdapter from "../../adapter/http.adapter";
+import HttpAdapter from "../adapter/http.adapter";
 import StartGameController from "../controllers/startGame.controller";
 
 const gameRoutes = Router();

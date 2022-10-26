@@ -1,6 +1,5 @@
 import { Router } from "express";
-import Controller from "./teste";
-import HttpAdapter from "../adapters/controllers/controller.adapter";
+import gameRoutes from "../../../modules/game/infrastructure/http/routes/route";
 
 class ApplicationRoute {
   public readonly router = Router();
@@ -12,7 +11,7 @@ class ApplicationRoute {
   }
 
   private allRoutes(): void {
-    this.router.use(this.baseUrl + "/game", HttpAdapter(Controller.execute));
+    this.router.use(this.baseUrl, gameRoutes);
   }
 }
 

@@ -13,7 +13,7 @@ const application = function () {
 
     app.listen(PORT, () => log("Bomb Has Been Planted..."));
   } catch (e) {
-    console.log(e);
+    log(e);
   }
 };
 

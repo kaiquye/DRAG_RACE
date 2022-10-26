@@ -1,6 +1,6 @@
 export interface IRes {
-  status: number;
-  json: object | string | null;
+  status?: number;
+  json?: object | string | null;
 }
 
 export interface IReq {

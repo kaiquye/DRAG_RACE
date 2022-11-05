@@ -123,3 +123,10 @@
     border-radius: 1000px;
     box-shadow: #37ff00 0px 0px 11px 10px;
 }
+
+.bodyPinheirinho  .proStages .light_red {
+    width: 10px;
+    height: 10px;
+    border-radius: 1000px;
+    box-shadow: #ff0000 0px 0px 11px 10px;
+}

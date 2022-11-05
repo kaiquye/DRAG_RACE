@@ -4,9 +4,13 @@ import { Lights } from "../lights";
 import { io } from "socket.io-client";
 import { StartMenu } from "../StartMenu";
 
-function BodyPinheirinho({ start, burned }) {
-  // setTimeout(() => burned(false), 4800 * 2);
-  //
+function BodyPinheirinho({ start, setBurned, burned }) {
+  /**
+   *   tempo limite de reação. ( o valor de burned e true, com isso, quem aperta o butão start antes desse tempo vai ter queimado a largada
+   *   setTimeout(() => burned(false), 4800 * 2);
+   */
+  setTimeout(() => setBurned(false), 4000 * 2);
+
   return (
     <section className={style.bodyPinheirinho}>
       <section className={style.stages}>
@@ -122,9 +126,16 @@ function BodyPinheirinho({ start, burned }) {
               color={"#43d243"}
             />
           </div>
-          {/*<div>*/}
-          {/*    <Lights StartMenu={StartMenu}  time={6000} color={'red'}/>*/}
-          {/*</div>*/}
+          <div>
+            {/*{!burned && (*/}
+            {/*  <Lights*/}
+            {/*    className={style.light_red}*/}
+            {/*    start={start}*/}
+            {/*    time={1}*/}
+            {/*    color={"#e34949"}*/}
+            {/*  />*/}
+            {/*)}*/}
+          </div>
         </section>
         <section className={style.right}>
           <div>
@@ -159,9 +170,16 @@ function BodyPinheirinho({ start, burned }) {
               color={"#43d243"}
             />
           </div>
-          {/*<div>*/}
-          {/*    <Lights StartMenu={StartMenu}  time={6000} color={'red'}/>*/}
-          {/*</div>*/}
+          <div>
+            {/*{!burned && (*/}
+            {/*  <Lights*/}
+            {/*    className={style.light_red}*/}
+            {/*    start={start}*/}
+            {/*    time={1}*/}
+            {/*    color={"#e34949"}*/}
+            {/*  />*/}
+            )}
+          </div>
         </section>
       </section>
     </section>
@@ -185,7 +203,7 @@ export function Pinheirinho() {
   });
 
   socket.on("finish", (value) => {
-    console.log(value);
+    alert("voce ganhou");
   });
 
   function selectRoom(_room, _nickname) {
@@ -195,11 +213,10 @@ export function Pinheirinho() {
   }
 
   function drag() {
-    console.log(Date.now());
     socket.emit("finishRace", {
       time: Date.now(),
       nickname,
-      burned: false,
+      burned: burned,
       room,
     });
   }
@@ -208,7 +225,11 @@ export function Pinheirinho() {
     <main className={style.Body}>
       <StartMenu selectRoom={selectRoom}>
         <div className={style.Pinheirinho}>
-          <BodyPinheirinho start={start} burned={setBurned} />
+          <BodyPinheirinho
+            start={start}
+            setBurned={setBurned}
+            burned={burned}
+          />
           <button onClick={() => drag()}>GO</button>
         </div>
       </StartMenu>

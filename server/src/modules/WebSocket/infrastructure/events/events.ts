@@ -33,6 +33,7 @@ class EventsWebSocket {
   }
 
   private StartGame(room: string): void {
+    console.log(room);
     const numberOfParticipants = this.dbCon.countMembersByRoom(room);
 
     console.log(numberOfParticipants);

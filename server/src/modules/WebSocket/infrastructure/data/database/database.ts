@@ -2,10 +2,12 @@ class Database {
   protected data = [];
 
   public countMembersByRoom(room: string) {
+    console.log("tudo", this.data);
     return this.data.filter((data) => data.room == room).length;
   }
 
   public save(data) {
+    console.log("database", data);
     this.data.push(data);
   }
 
@@ -27,8 +29,7 @@ class Database {
 
   public deleteRace(room: string) {
     const index = this.data.findIndex((value) => value.room === room);
-
-    this.data[index] = undefined;
+    this.data.splice(index, 1);
   }
 }
 

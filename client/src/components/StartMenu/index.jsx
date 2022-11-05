@@ -8,6 +8,7 @@ export function StartMenu({ selectRoom, children }) {
 
   return (
     <section className={style.menu}>
+      <div className={style.backgroundImage}></div>
       {next === false ? (
         <>
           <section>

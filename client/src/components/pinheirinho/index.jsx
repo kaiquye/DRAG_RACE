@@ -224,6 +224,7 @@ export function Pinheirinho() {
   return (
     <main>
       <StartMenu className={style.Body} selectRoom={selectRoom}>
+        <h1 style={{ color: "white" }}>COPA MANCOS</h1>
         <div className={style.Pinheirinho}>
           <BodyPinheirinho
             start={start}

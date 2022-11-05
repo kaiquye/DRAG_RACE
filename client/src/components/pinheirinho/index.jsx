@@ -222,16 +222,18 @@ export function Pinheirinho() {
   }
 
   return (
-    <main className={style.Body}>
-      <StartMenu selectRoom={selectRoom}>
+    <main>
+      <StartMenu className={style.Body} selectRoom={selectRoom}>
         <div className={style.Pinheirinho}>
           <BodyPinheirinho
             start={start}
             setBurned={setBurned}
             burned={burned}
           />
-          <button onClick={() => drag()}>GO</button>
         </div>
+        <button className={style.btnStart} onClick={() => drag()}>
+          GO!!
+        </button>
       </StartMenu>
     </main>
   );

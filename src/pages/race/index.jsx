@@ -1,13 +1,11 @@
-import {Pinheirinho} from "../../components/pinheirinho";
-
+import { Pinheirinho } from "../../components/pinheirinho";
 
 export function RacePage() {
-
-    return (
-        <section>
-            <main>
-                <Pinheirinho />
-            </main>
-        </section>
-    )
+  return (
+    <section>
+      <main>
+        <Pinheirinho />
+      </main>
+    </section>
+  );
 }

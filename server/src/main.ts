@@ -2,7 +2,7 @@ import * as express from "express";
 import * as socket from "socket.io";
 import * as http from "http";
 import CorsConfig from "./infrastructure/middlewares/cors/cors.config";
-import EventsWebSocket from "./modules/WebSocket/infrastructure/events/events";
+import EventsWebSocket from "./modules/WebSocket/events/events";
 
 const log = console.log;
 

@@ -2,12 +2,10 @@ class Database {
   protected data = [];
 
   public countMembersByRoom(room: string) {
-    console.log("tudo", this.data);
     return this.data.filter((data) => data.room == room).length;
   }
 
   public save(data) {
-    console.log("database", data);
     this.data.push(data);
   }
 

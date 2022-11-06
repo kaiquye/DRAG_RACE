@@ -14,3 +14,25 @@
     background-image: url("https://cdn.wallpapersafari.com/24/56/XvHBQx.jpg");
 }
 
+.formMenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.formMenu input {
+    float: right;
+    padding: 3px;
+    font-family: Ubuntu;
+    text-align: center;
+}
+
+.formMenu button {
+    border: none;
+    padding: 5px;
+    background-color: orange;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 5px;
+    box-shadow: #dcc847 10px 10px 120px 10px;
+}

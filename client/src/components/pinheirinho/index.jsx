@@ -9,7 +9,7 @@ function BodyPinheirinho({ start, setBurned, burned }) {
    *   tempo limite de reação. ( o valor de burned e true, com isso, quem aperta o butão start antes desse tempo vai ter queimado a largada
    *   setTimeout(() => burned(false), 4800 * 2);
    */
-  setTimeout(() => setBurned(false), 4000 * 2);
+  setTimeout(() => setBurned(false), 3300 * 2);
 
   return (
     <section className={style.bodyPinheirinho}>
@@ -203,7 +203,8 @@ export function Pinheirinho() {
   });
 
   socket.on("finish", (value) => {
-    alert("voce ganhou");
+    console.log("ganhoy");
+    alert(value);
   });
 
   function selectRoom(_room, _nickname) {

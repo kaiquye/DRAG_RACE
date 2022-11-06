@@ -15,7 +15,6 @@ class EventsWebSocket {
 
   public Room(): void {
     this.event.on("room", (data: any) => {
-      console.log(data);
       this.event.join(data.room);
       this.event.join(data.nickname);
 
@@ -33,10 +32,7 @@ class EventsWebSocket {
   }
 
   private StartGame(room: string): void {
-    console.log(room);
     const numberOfParticipants = this.dbCon.countMembersByRoom(room);
-
-    console.log(numberOfParticipants);
 
     if (numberOfParticipants >= 2) {
       this.con.to(room).emit("start", true);
@@ -64,26 +60,28 @@ class EventsWebSocket {
         );
 
         if (player2) {
-          if (player2.burned) {
-            const deleted = this.dbCon.deleteRace(data.room);
-            console.log("deleted", deleted);
-            return this.con.to(data.nickname).emit("finish", "voce ganhou");
+          if (player2.burned && data.burned) {
+            this.con.to(data.nickname).emit("finish", "victory");
+            return this.con.to(player2.nickname).emit("finish", "you lost");
           }
 
-          if (data.burned) {
-            const deleted = this.dbCon.deleteRace(data.room);
-            console.log("deleted", deleted);
-            return this.con.to(player2.nickname).emit("finish", "voce ganhou");
+          if (data.burned && !player2.burned) {
+            this.con.to(player2.nickname).emit("finish", "victory");
+            return this.con.to(data.nickname).emit("finish", "you lost");
+          }
+
+          if (!data.burned && player2.burned) {
+            this.con.to(data.nickname).emit("finish", "victory");
+            return this.con.to(player2.nickname).emit("finish", "you lost");
           }
 
           if (player2.time < data.time) {
-            const deleted = this.dbCon.deleteRace(data.room);
-            console.log("deleted", deleted);
-            return this.con.to(player2.nickname).emit("finish", "voce ganhou");
+            this.con.to(data.nickname).emit("finish", "victory");
+            return this.con.to(player2.nickname).emit("finish", "you lost");
           }
 
-          this.dbCon.deleteRace(data.room);
-          return this.con.to(data.nickname).emit("finish", "voce ganhou");
+          this.con.to(data.nickname).emit("finish", "victory");
+          return this.con.to(player2.nickname).emit("finish", "you lost");
         }
       }
     );

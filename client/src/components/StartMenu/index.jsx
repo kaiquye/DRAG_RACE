@@ -11,14 +11,17 @@ export function StartMenu({ selectRoom, children }) {
       <div className={style.backgroundImage}></div>
       {next === false ? (
         <>
-          <section>
+          <section className={style.formMenu}>
             <div>
-              <label>Nickname</label>
-              <input value={room} onChange={(e) => setRoom(e.target.value)} />
+              <input
+                placeholder={"Room"}
+                value={room}
+                onChange={(e) => setRoom(e.target.value)}
+              />
             </div>
             <div>
-              <label>Room</label>
               <input
+                placeholder={"Car"}
                 value={nickname}
                 onChange={(e) => setNickname(e.target.value)}
               />
@@ -29,7 +32,7 @@ export function StartMenu({ selectRoom, children }) {
                 setNext(true);
               }}
             >
-              next
+              NEXT
             </button>
           </section>
         </>
